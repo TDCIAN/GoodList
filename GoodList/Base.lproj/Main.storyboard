@@ -24,6 +24,9 @@
                                     <segment title="Medium"/>
                                     <segment title="Low"/>
                                 </segments>
+                                <connections>
+                                    <action selector="priorityValueChangedWithSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="lTd-PQ-maO"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6bC-4H-5YY">
                                 <rect key="frame" x="0.0" y="155" width="414" height="707"/>
@@ -88,12 +91,9 @@
                                     <segment title="Low"/>
                                 </segments>
                             </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hU5-zV-Zdk">
-                                <rect key="frame" x="159" y="404" width="97" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hU5-zV-Zdk">
+                                <rect key="frame" x="20" y="432" width="374" height="34"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.62745098040000002" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="3Sr-ck-Qz0"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -102,14 +102,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fol-nu-ZOG" firstAttribute="top" secondItem="dIG-MF-uMG" secondAttribute="top" constant="20" id="0o7-t3-7Yq"/>
+                            <constraint firstItem="hU5-zV-Zdk" firstAttribute="leading" secondItem="dIG-MF-uMG" secondAttribute="leading" constant="20" id="IyI-tR-Xun"/>
                             <constraint firstItem="fol-nu-ZOG" firstAttribute="centerX" secondItem="dIG-MF-uMG" secondAttribute="centerX" id="LGx-z0-10m"/>
-                            <constraint firstItem="hU5-zV-Zdk" firstAttribute="centerX" secondItem="dIG-MF-uMG" secondAttribute="centerX" id="RwX-qv-Dce"/>
                             <constraint firstItem="hU5-zV-Zdk" firstAttribute="centerY" secondItem="dIG-MF-uMG" secondAttribute="centerY" id="Z9N-H3-YjV"/>
+                            <constraint firstItem="dIG-MF-uMG" firstAttribute="trailing" secondItem="hU5-zV-Zdk" secondAttribute="trailing" constant="20" id="rzW-9U-03l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Task" id="Ia7-cK-8jE">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Fdu-56-KA0"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Fdu-56-KA0">
+                            <connections>
+                                <action selector="save" destination="wqw-fa-wEv" id="mL2-H1-VKa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="prioritySegmentedControl" destination="fol-nu-ZOG" id="YlO-pj-ZSG"/>
+                        <outlet property="taskTitleTextField" destination="hU5-zV-Zdk" id="VBy-vl-ApD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbE-k8-JgM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
